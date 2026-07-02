@@ -1,9 +1,9 @@
-name: npm ci
+name: test
 
 on: workflow_dispatch
 
 jobs:
-  build:
+  test:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v7
@@ -12,4 +12,5 @@ jobs:
           node-version: '24.15.0'
           cache: 'npm'
       - run: npm i -g npm@11.14.0
-      - run: npm ci
+      - name: 'npm ci'
+        run: npm ci

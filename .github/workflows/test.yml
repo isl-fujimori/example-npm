@@ -10,7 +10,10 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: '24.15.0'
-          cache: 'npm'
       - run: npm i -g npm@11.14.0
-      - name: 'npm ci'
+      - name: 'npm ci (1回目)'
+        run: npm ci
+      - name: 'npm ci (2回目)'
+        run: npm ci
+      - name: 'npm ci (3回目)'
         run: npm ci
